@@ -18,8 +18,8 @@ Gem::Specification.new do |gem|
   gem.test_files    = gem.files.grep(%r{^(test|spec|features)/})
   gem.require_paths = ["lib"]
 
-  gem.add_dependency "socialite_js-source",   "= 0.0.1"
+  gem.add_runtime_dependency     "socialite_js-source",   "= 0.0.2"
+  gem.add_runtime_dependency     "rails",                 "~> 3.2.11"
   
-  gem.add_development_dependency "debugger",  "~> 1.5.0"
-  
+  gem.add_development_dependency "debugger",              "~> 1.5.0"
 end
