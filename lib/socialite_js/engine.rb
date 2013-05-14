@@ -12,7 +12,7 @@ module SocialiteJs
       ActiveSupport.on_load(:action_controller) do
         debugger
         require 'socialite_js/on_load_action_controller'
-        helper SocialiteJs::JavascriptHelper
+        ApplicationController.class_eval { helper SocialiteJs::JavascriptHelper }
       end
     end
   end
