@@ -9,7 +9,7 @@ module SocialiteJs
                 else
                   Source.bundled_path
                 end
-      render :partial => js_path
+      javascript_include_tag js_path
     end
 
     def respond_to?(method_sym, include_private = false)
@@ -22,7 +22,7 @@ module SocialiteJs
     
     def method_missing(method_sym, *args, &block)
       if match = respond_to_socialite_extension?(method_sym.to_s)
-        SocialiteJs::Source.send("#{match['extension_name']}_extension_path")
+        javascript_include_tag SocialiteJs::Source.send("#{match['extension_name']}_extension_path")
       else
         super
       end
